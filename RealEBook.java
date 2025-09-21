@@ -62,8 +62,8 @@ public class RealEBook implements EBook {
     @Override
     public long getSize() {
         return size;
+    }
 
-    
     /**
      * Returns the title of the electronic book.
      * @return The title of the book
@@ -71,6 +71,5 @@ public class RealEBook implements EBook {
     @Override
     public String getTitle() {
         return title;
-
     }
 }
