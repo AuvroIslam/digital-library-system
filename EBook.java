@@ -8,10 +8,12 @@ public interface EBook {
      */
     void display();
 
+
     /**
      * Returns the size of the electronic book in bytes.
      * @return The size of the book file in bytes
      */
     long getSize();
+    String getTitle();
 
 }
