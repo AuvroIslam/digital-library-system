@@ -30,6 +30,20 @@ public class EBookProxy implements EBook {
     }
 
     /**
+     * Returns the size of the electronic book in bytes.
+     * Loads the actual book on first call (lazy loading).
+     * @return The size of the book file in bytes
+     */
+    @Override
+    public long getSize() {
+        if (realEBook == null) {
+            System.out.println("First time access for size - loading the real EBook...");
+            realEBook = new RealEBook(filename);
+        }
+        return realEBook.getSize();
+    }
+
+    /**
      * Returns the filename of the book.
      * @return The filename
      */

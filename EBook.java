@@ -7,4 +7,11 @@ public interface EBook {
      * Displays the content of the electronic book.
      */
     void display();
+
+    /**
+     * Returns the size of the electronic book in bytes.
+     * @return The size of the book file in bytes
+     */
+    long getSize();
+
 }
