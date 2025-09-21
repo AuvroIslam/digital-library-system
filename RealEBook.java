@@ -6,7 +6,11 @@
 public class RealEBook implements EBook {
     private String filename;
     private String content;
+
+    private long size;
+
     private String title;
+
 
     /**
      * Constructor that takes the filename and immediately loads the book.
@@ -35,6 +39,8 @@ public class RealEBook implements EBook {
         
         // Simulate loading content
         this.content = "Content of " + filename + " loaded successfully!";
+        // Simulate file size based on filename length and content (in bytes)
+        this.size = (long) (filename.length() * 1024 + content.length() * 2);
         System.out.println(filename + " has been loaded into memory.");
     }
 
@@ -47,6 +53,16 @@ public class RealEBook implements EBook {
         System.out.println("Title: " + title);
         System.out.println("Content: " + content);
     }
+
+
+    /**
+     * Returns the size of the electronic book in bytes.
+     * @return The size of the book file in bytes
+     */
+    @Override
+    public long getSize() {
+        return size;
+
     
     /**
      * Returns the title of the electronic book.
@@ -55,5 +71,6 @@ public class RealEBook implements EBook {
     @Override
     public String getTitle() {
         return title;
+
     }
 }

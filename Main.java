@@ -27,14 +27,21 @@ public class Main {
         System.out.println("\n4. Accessing the same book again (already loaded):");
         book1.display();
         
-        System.out.println("\n5. Accessing second book for the first time:");
+        System.out.println("\n5. Getting size of the first book (already loaded):");
+        System.out.println("Book size: " + book1.getSize() + " bytes");
+        
+        System.out.println("\n6. Getting size of third book (will trigger loading):");
+        System.out.println("Book size: " + book3.getSize() + " bytes");
+        
+        System.out.println("\n7. Accessing second book for the first time:");
         book2.display();
         
-        System.out.println("\n6. Comparison with direct RealEBook instantiation:");
+        System.out.println("\n8. Comparison with direct RealEBook instantiation:");
         System.out.println("Creating RealEBook directly (loads immediately):");
         EBook directBook = new RealEBook("Direct_Load_Book.pdf");
         System.out.println("Direct book title: " + directBook.getTitle());
         directBook.display();
+        System.out.println("Direct book size: " + directBook.getSize() + " bytes");
         
         System.out.println("\n=== Demo completed ===");
         

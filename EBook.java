@@ -7,10 +7,13 @@ public interface EBook {
      * Displays the content of the electronic book.
      */
     void display();
-    
+
+
     /**
-     * Returns the title of the electronic book.
-     * @return The title of the book
+     * Returns the size of the electronic book in bytes.
+     * @return The size of the book file in bytes
      */
+    long getSize();
     String getTitle();
+
 }
