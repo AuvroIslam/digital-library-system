@@ -44,4 +44,15 @@ public class EBookProxy implements EBook {
     public boolean isLoaded() {
         return realEBook != null;
     }
+    
+    /**
+     * Returns the title of the electronic book.
+     * For efficiency, extracts title from filename without loading the full book.
+     * @return The title of the book
+     */
+    @Override
+    public String getTitle() {
+        // Extract title from filename without loading the full book for efficiency
+        return filename.replaceAll("\\.[^.]+$", "").replace("_", " ");
+    }
 }

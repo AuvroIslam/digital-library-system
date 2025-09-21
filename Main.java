@@ -14,6 +14,12 @@ public class Main {
         
         System.out.println("\n2. Proxies created - no actual books loaded yet!");
         
+        // Demonstrate getting titles without loading (proxy efficiency)
+        System.out.println("\n2.1. Getting titles from proxies (no loading required):");
+        System.out.println("Book 1 title: " + book1.getTitle());
+        System.out.println("Book 2 title: " + book2.getTitle());
+        System.out.println("Book 3 title: " + book3.getTitle());
+        
         // Demonstrate lazy loading
         System.out.println("\n3. Accessing first book for the first time:");
         book1.display();
@@ -27,6 +33,7 @@ public class Main {
         System.out.println("\n6. Comparison with direct RealEBook instantiation:");
         System.out.println("Creating RealEBook directly (loads immediately):");
         EBook directBook = new RealEBook("Direct_Load_Book.pdf");
+        System.out.println("Direct book title: " + directBook.getTitle());
         directBook.display();
         
         System.out.println("\n=== Demo completed ===");
@@ -37,5 +44,6 @@ public class Main {
         System.out.println("- Memory efficient for large collections");
         System.out.println("- Transparent to client code (same interface)");
         System.out.println("- Caches the loaded object for subsequent calls");
+        System.out.println("- getTitle() works efficiently without loading full content");
     }
 }
